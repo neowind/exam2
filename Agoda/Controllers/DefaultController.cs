@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data;
 using System.Data.Entity;
-using Agoda.Models;
+using Agoda.Repositories;
 
 namespace Agoda.Controllers
 {
@@ -28,8 +28,6 @@ namespace Agoda.Controllers
 
         public ActionResult Static()
         {
-            //var hotelRepository = new HotelRepository();
-            //var hotelList = hotelRepository.fetchHotels();
             var hotelList = hotelRepository.fetchHotels();
             return View(hotelList);
         }

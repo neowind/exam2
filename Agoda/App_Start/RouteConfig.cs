@@ -16,7 +16,19 @@ namespace Agoda
             routes.MapRoute(
                 name: "DefaultApi",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Default", action = "Static", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Default/Static",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Default", action = "Static", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Default/Ajax",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Default", action = "Ajax", id = UrlParameter.Optional }
             );
         }
     }

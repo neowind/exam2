@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Data;
 using System.Data.Entity;
+using Agoda.Repositories;
 using Agoda.Models;
 
 namespace Agoda.Controllers
@@ -13,8 +14,6 @@ namespace Agoda.Controllers
     [RoutePrefix("Default")]
     public class AjaxController : ApiController
     {
-        //private HotelDBContext db = new HotelDBContext();
-
         private IHotelRepository hotelRepository;
 
         public AjaxController(IHotelRepository hotelRepositoryInput)

@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
+using Agoda.Models;
 
-namespace Agoda.Models
+namespace Agoda.Repositories
 {
-    public interface IHotelRepository
-    {
-        List<Hotel> fetchHotels();
-    }
-
     public class HotelRepository : IHotelRepository
     {
         private HotelDBContext db = new HotelDBContext();

@@ -11,6 +11,7 @@ using SimpleInjector;
 using SimpleInjector.Integration.Web.Mvc;
 using SimpleInjector.Integration.WebApi;
 using Agoda.Models;
+using Agoda.Repositories;
 
 namespace Agoda
 {
@@ -35,9 +36,7 @@ namespace Agoda
             // This two extension method from integration package
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
             container.RegisterWebApiControllers(GlobalConfiguration.Configuration);
-
-            var HotelRepository = container.GetInstance<IHotelRepository>();
-
+            
             GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(container);
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }
