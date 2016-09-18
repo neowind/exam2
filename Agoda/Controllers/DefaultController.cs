@@ -11,6 +11,12 @@ namespace Agoda.Controllers
 {
     public class DefaultController : Controller
     {
+        private IHotelRepository hotelRepository;
+ 
+        public DefaultController(IHotelRepository hotelRepositoryInput)
+        {
+            hotelRepository = hotelRepositoryInput;
+        }
 
         //
         // GET: /Default/
@@ -22,7 +28,8 @@ namespace Agoda.Controllers
 
         public ActionResult Static()
         {
-            var hotelRepository = new HotelRepository();
+            //var hotelRepository = new HotelRepository();
+            //var hotelList = hotelRepository.fetchHotels();
             var hotelList = hotelRepository.fetchHotels();
             return View(hotelList);
         }

@@ -13,13 +13,22 @@ namespace Agoda.Controllers
     [RoutePrefix("Default")]
     public class AjaxController : ApiController
     {
-        private HotelDBContext db = new HotelDBContext();
+        //private HotelDBContext db = new HotelDBContext();
+
+        private IHotelRepository hotelRepository;
+
+        public AjaxController(IHotelRepository hotelRepositoryInput)
+        {
+            hotelRepository = hotelRepositoryInput;
+        }
 
         // GET api/ajax
         [Route("api/ajax")]
         public IEnumerable<Hotel> Get()
         {
-            return db.Hotels.ToList();
+            var hotelList = hotelRepository.fetchHotels();
+            return hotelList;
+            //return db.Hotels.ToList();
         }
 
         //// GET api/ajax/5
