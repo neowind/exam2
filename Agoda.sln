@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agoda", "Agoda\Agoda.csproj", "{2C2D75C0-CF6F-481B-A855-042761BD5D6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agoda.Tests", "Agoda.Tests\Agoda.Tests.csproj", "{AC238221-0EC4-4F3B-8751-9FF5FC97F8B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C2D75C0-CF6F-481B-A855-042761BD5D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2D75C0-CF6F-481B-A855-042761BD5D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2D75C0-CF6F-481B-A855-042761BD5D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2D75C0-CF6F-481B-A855-042761BD5D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC238221-0EC4-4F3B-8751-9FF5FC97F8B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC238221-0EC4-4F3B-8751-9FF5FC97F8B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC238221-0EC4-4F3B-8751-9FF5FC97F8B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC238221-0EC4-4F3B-8751-9FF5FC97F8B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

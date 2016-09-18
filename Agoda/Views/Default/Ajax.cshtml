@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotels</title>
+</head>
+<body>
+    <script src="../../Content/Scripts/handlebars-v4.0.5.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    
+    <script id="hotels-template" type="text/x-handlebars-template">
+        {{#each this}}
+        <table>
+            <tr>
+                <th>
+                    {{Name}}
+                </th>
+                <th>
+                    {{Rating}}
+                </th>
+                <th>
+                    {{LowestPrice}}
+                </th>
+                <th>
+                    {{Location}}
+                </th>
+                <th></th>
+            </tr>
+        </table>
+        {{/each}}
+    </script>
+
+    <div class="content-placeholder"></div>
+
+    <script>
+        var uri = 'api/ajax';
+
+        // Grab the template script
+        var theTemplateScript = $("#hotels-template").html();
+
+        //complie template
+        var theTemplate = Handlebars.compile(theTemplateScript);
+
+    $(document).ready(function () {
+      // Send an AJAX request
+      $.getJSON(uri)
+          .done(function (data) {
+              var theCompiledHtml = theTemplate(data);
+
+              //// Add the compiled html to the page
+              $('.content-placeholder').html(theCompiledHtml);
+          });
+    });
+
+    </script>
+</body>
+</html>
