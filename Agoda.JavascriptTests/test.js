@@ -10,12 +10,12 @@ describe("ajaxCall", function () {
     //    };
     //});
 
-    it("should have a default name", function () {
+    it("Test constructor", function () {
         var _ajaxCall = new ajaxCall('requester', 'template', 'target');
         expect(_ajaxCall.requester).to.equal('requester');
     });
 
-    it("should have a default name", function () {
+    it("Test onSuccess", function () {
         var expectedResult = '<tr><td>c1</td><td>c2</td></tr>';
 
         var mockData = ['c1', 'c2'];
@@ -41,7 +41,7 @@ describe("ajaxCall", function () {
         expect(mockTarget.result).to.equal(expectedResult);
     });
 
-    it("should have a default name", function () {
+    it("Test onFail", function () {
         var expectedResult = 'error';
 
         var mockTarget = {
@@ -51,26 +51,6 @@ describe("ajaxCall", function () {
 
         var _ajaxCall = new ajaxCall(undefined, undefined, mockTarget);
         _ajaxCall.onFiled(undefined, 'error');
-        expect(mockTarget.result).to.equal(expectedResult);
-    });
-
-    it("should have a default name", function () {
-        var expectedResult = 'error';
-
-        var mockTarget = {
-            result: '',
-            html: function (compiledHTML) { this.result = compiledHTML },
-        };
-
-        var mockRequester = {
-            getJSON: {function (uri) { if uri == 'done'
-                                        this.done}},
-            done: {},
-            fail: {}
-        };
-
-        var _ajaxCall = new ajaxCall(mockRequester, undefined, mockTarget);
-        _ajaxCall.requestData('uri');
         expect(mockTarget.result).to.equal(expectedResult);
     });
 });

@@ -8,29 +8,26 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
     
     <script id="hotels-template" type="text/x-handlebars-template">
-        {{#each this}}
-        <table>
+        <table class="table">
             <tr>
-                <th>
-                    {{Name}}
-                </th>
-                <th>
-                    {{Rating}}
-                </th>
-                <th>
-                    {{LowestPrice}}
-                </th>
-                <th>
-                    {{Location}}
-                </th>
-                <th></th>
+                <th>Name</th>
+                <th>Rating</th>
+                <th>LowestPrice</th>
+                <th>Location</th>
             </tr>
+            {{#each this}}
+            <tr class="data">
+                <td>{{Name}}</td>
+                <td>{{Rating}}</td>
+                <td>{{LowestPrice}}</td>
+                <td>{{Location}}</td>
+            </tr>
+            {{/each}}
         </table>
-        {{/each}}
     </script>
-   
+    <h2>Ajax</h2>
     <div class="content-placeholder"></div>
-    <button id="fetchData">Fetch Hotel Data</button>
+    <button id="fetchData" style="height:30px">Fetch Hotel Data</button>
     <script src="~/Content/Scripts/ajaxCall.js"></script>
     <script>
         var uri = 'api/ajax';
@@ -42,22 +39,6 @@
         var theTemplate = Handlebars.compile(theTemplateScript);
 
         var _ajaxCall = new ajaxCall($, theTemplate, $('.content-placeholder'));
-        //function onSuccess(template, data) {
-        //    var theCompiledHtml = template(data);
-
-        //    //// Add the compiled html to the page
-        //    $('.content-placeholder').html(theCompiledHtml);
-        //};
-
-        //function onFiled(jqXHR, textStatus) {
-        //    $('.content-placeholder').html(textStatus);
-        //};
-
-        //function requestData(requester, template) {
-        //    requester.getJSON(uri)
-        //        .done(onSuccess.bind(undefined, template))
-        //        .fail(onFiled);
-        //};
 
         function onFetchHotelDataClick() {
             _ajaxCall.requestData(uri);

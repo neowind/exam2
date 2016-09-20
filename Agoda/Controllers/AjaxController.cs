@@ -30,6 +30,13 @@ namespace Agoda.Controllers
             //return db.Hotels.ToList();
         }
 
+        [Route("api/ajax/{id}")]
+        public IEnumerable<Hotel> Get(int id)
+        {
+           
+            return new List<Hotel>();
+            //return db.Hotels.ToList();
+        }
         //// GET api/ajax/5
         //public string Get(int id)
         //{
