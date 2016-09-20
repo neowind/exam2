@@ -28,9 +28,10 @@
         </table>
         {{/each}}
     </script>
-
+   
     <div class="content-placeholder"></div>
-
+    <button id="fetchData">Fetch Hotel Data</button>
+    <script src="~/Content/Scripts/ajaxCall.js"></script>
     <script>
         var uri = 'api/ajax';
 
@@ -40,15 +41,30 @@
         //complie template
         var theTemplate = Handlebars.compile(theTemplateScript);
 
-    $(document).ready(function () {
-      // Send an AJAX request
-      $.getJSON(uri)
-          .done(function (data) {
-              var theCompiledHtml = theTemplate(data);
+        var _ajaxCall = new ajaxCall($, theTemplate, $('.content-placeholder'));
+        //function onSuccess(template, data) {
+        //    var theCompiledHtml = template(data);
 
-              //// Add the compiled html to the page
-              $('.content-placeholder').html(theCompiledHtml);
-          });
+        //    //// Add the compiled html to the page
+        //    $('.content-placeholder').html(theCompiledHtml);
+        //};
+
+        //function onFiled(jqXHR, textStatus) {
+        //    $('.content-placeholder').html(textStatus);
+        //};
+
+        //function requestData(requester, template) {
+        //    requester.getJSON(uri)
+        //        .done(onSuccess.bind(undefined, template))
+        //        .fail(onFiled);
+        //};
+
+        function onFetchHotelDataClick() {
+            _ajaxCall.requestData(uri);
+        };
+
+    $(document).ready(function () {
+        $('#fetchData').click(onFetchHotelDataClick);
     });
 
     </script>

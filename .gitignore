@@ -176,3 +176,8 @@ Agoda/obj
 Agoda/bin
 Agoda.Tests/bin
 Agoda.Test/obj
+Agoda.JavascriptTests/bin
+Agoda.JavascriptTests/obj
+Agoda.JavascriptTests/node_modules
+Agoda.JavascriptTests/Web.Debug.config
+Agoda.JavascriptTests/Web.Release.config

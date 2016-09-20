@@ -162,6 +162,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Scripts\ajaxCall.js" />
     <Content Include="Content\Scripts\handlebars-v4.0.5.js" />
     <None Include="Content\Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Content\Scripts\jquery-1.8.2.js" />

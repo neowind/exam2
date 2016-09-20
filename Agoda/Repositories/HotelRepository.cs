@@ -8,7 +8,10 @@ namespace Agoda.Repositories
 {
     public class HotelRepository : IHotelRepository
     {
+        //change to Interface
         private HotelDBContext db = new HotelDBContext();
+
+        //create contructor
 
         public List<Hotel> fetchHotels()
         {
