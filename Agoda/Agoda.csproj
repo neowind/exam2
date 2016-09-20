@@ -150,8 +150,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\AjaxWebApi.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -162,6 +163,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Hotels.mdf" />
+    <Content Include="App_Data\Hotels_log.ldf">
+      <DependentUpon>Hotels.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -268,7 +273,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\Static.cshtml" />
     <Content Include="Views\Hotels\Index.cshtml" />
     <Content Include="Views\Hotels\Details.cshtml" />
@@ -276,9 +280,7 @@
     <Content Include="Views\Hotels\Edit.cshtml" />
     <Content Include="Views\Hotels\Delete.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

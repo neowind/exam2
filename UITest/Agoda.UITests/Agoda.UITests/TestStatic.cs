@@ -41,7 +41,7 @@ namespace Agoda.UITests
         }
 
         [Test]
-        public void InitPage()
+        public void InitStaticPage()
         {
             int retried = 0;
 

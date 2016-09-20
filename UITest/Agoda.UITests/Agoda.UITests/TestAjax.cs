@@ -48,7 +48,7 @@ namespace Agoda.UITests
         }
 
         [Test]
-        public void InitAjax()
+        public void InitAjaxPage()
         {
             int retried = 0;
 
